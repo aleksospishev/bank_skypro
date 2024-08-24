@@ -1,8 +1,18 @@
 import json
 from datetime import datetime
+import logging
+
+
+serviceces_logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler("logs/utils.log", mode="w")
+file_formatter = logging.Formatter("%(asctime)s %(filename)s %(funcName)s %(levelname)s: %(message)s")
+file_handler.setFormatter(file_formatter)
+serviceces_logger.addHandler(file_handler)
+serviceces_logger.setLevel(logging.DEBUG)
 
 
 def categories_cash_back(data: list[dict], year: int, month: int):
+    serviceces_logger.info(f"cash_back за {month}, {year}")
     res = {}
     for operation in data:
         operation_date = datetime.strptime(operation["Дата операции"], "%d.%m.%Y %H:%M:%S")

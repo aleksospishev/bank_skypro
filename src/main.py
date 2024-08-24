@@ -17,6 +17,6 @@ transactions_pd = pd.DataFrame(transactions_data)
 
 
 if __name__ == "__main__":
-    print(main_page("2023-12-21 12:23:45"))
-    print(categories_cash_back(transactions, 2018, 12))
+    # print(main_page("2023-12-21 12:23:45"))
+    # print(categories_cash_back(transactions, 2018, 12))
     print(spending_by_category(transactions_pd, "Аптеки", "31.12.2021 16:42:04"))
